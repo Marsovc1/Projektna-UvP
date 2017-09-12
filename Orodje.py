@@ -1,5 +1,5 @@
 a = [[2, 2], [2, 2]]
-b = [[1, 1], [0]]
+b = [[1, 1], [0, 0]]
 
 def nicelna_matrika(st_vrstic, st_stolpcev):
     C = []
@@ -24,7 +24,7 @@ def primernost_matrik(matA, matB):
             return False
 
 def seštevalec_matrik(matA, matB):
-    def seštevanje_matrika(matA, matB):
+    if primernost_matrik(matA, matB) == True:
         a = len(matA)
         b = len(matA[0])
         C = nicelna_matrika(a, b)
@@ -32,9 +32,17 @@ def seštevalec_matrik(matA, matB):
             for j in range(len(matA[0])):
                 C[i][j] = matA[i][j] + matB[i][j]
         print(C)
-    if primernost_matrik(matA, matB) == True:
-        seštevanje_matrika(matA, matB)
     else:
         print('matriki nista primerni za seštevanje')
 
 def odštevalec_matrik(matA, matB):
+    if primernost_matrik(matA, matB) == True:
+        a = len(matA)
+        b = len(matA[0])
+        C = nicelna_matrika(a, b)
+        for i in range(len(matA)):
+            for j in range(len(matA[0])):
+                C[i][j] = matA[i][j] - matB[i][j]
+        print(C)
+    else:
+        print('matriki nista primerni za odštevanje')
