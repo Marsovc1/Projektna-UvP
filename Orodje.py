@@ -1,3 +1,12 @@
+import tkinter as tk
+
+def izpis_rezultata(mat):
+    okno = tk.Tk()
+    rezultat = tk.Label(okno, text=mat, font=('Arial', 20), justify='center')
+    rezultat.grid()
+
+    okno.mainloop()
+
 def nicelna_matrika(st_vrstic, st_stolpcev):
     C = []
     for i in range(st_vrstic):
@@ -44,7 +53,10 @@ def seštevalec_matrik(matA, matB):
         for i in range(len(matA)):
             for j in range(len(matA[0])):
                 C[i][j] = matA[i][j] + matB[i][j]
-        print(C)
+        with open('matrika_rezultat.txt', 'w') as f:
+            f.write(str(C))
+        izpis_rezultata(C)
+
     else:
         print('matriki nista primerni za seštevanje(velikost ali elementi)')
 
@@ -56,6 +68,9 @@ def odštevalec_matrik(matA, matB):
         for i in range(len(matA)):
             for j in range(len(matA[0])):
                 C[i][j] = matA[i][j] - matB[i][j]
-        print(C)
+        with open('matrika_rezultat.txt', 'w') as f:
+            f.write(str(C))
+        izpis_rezultata(C)
+
     else:
         print('matriki nista primerni za odštevanje')

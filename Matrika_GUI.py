@@ -50,7 +50,7 @@ def matrika():
                     vrstica = []
                     for stolpec in range(a2):
                         indeks = (vrsta, stolpec)
-                        vrstica.append(vrednost[indeks].get())
+                        vrstica.append(int(vrednost[indeks].get()))
                     matrikaA.append(vrstica)
                 with open(ime + '.txt', 'w') as f:
                     f.write(str(matrikaA))
