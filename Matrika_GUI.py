@@ -78,8 +78,8 @@ def matrika():
                 error_okno()
         except ValueError:
             error_okno()
+    pass
 
     gumb = tk.Button(okno, text='Začni', command=preveri_vrednosti)
     gumb.grid(row=4, columnspan=2)
     okno.mainloop()
-matrika()
