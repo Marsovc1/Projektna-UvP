@@ -52,7 +52,7 @@ def matrika():
                         indeks = (vrsta, stolpec)
                         vrstica.append(vrednost[indeks].get())
                     matrikaA.append(vrstica)
-                with open('matrika' + ime + '.txt', 'w') as f:
+                with open(ime + '.txt', 'w') as f:
                     f.write(str(matrikaA))
 
             if je_naravno_stevilo(a1): #tu se začne preverjanje
