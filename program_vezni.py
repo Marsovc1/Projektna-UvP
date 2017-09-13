@@ -1,5 +1,17 @@
 import tkinter as tk
 
+def ne_obstoj_datoteke():
+    okno=tk.Tk()
+    pozor = tk.Label(okno, text='Matrika ne obstaja izberi drugo matriko', font=('Arial', 20))
+    pozor.grid()
+    okno.mainloop()
+
+def je_stevilo(a):
+    try:
+        float(a)
+        return True
+    except ValueError:
+        return False
 
 def je_naravno_stevilo(a):
     try:

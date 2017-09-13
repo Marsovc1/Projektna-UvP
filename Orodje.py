@@ -58,7 +58,10 @@ def seštevalec_matrik(matA, matB):
         izpis_rezultata(C)
 
     else:
-        print('matriki nista primerni za seštevanje(velikost ali elementi)')
+        okno = tk.Tk()
+        pozor = tk.Label(okno, text='Matriki nista primerni za seštevanje', font=('Arial', 20))
+        pozor.grid()
+        okno.mainloop()
 
 def odštevalec_matrik(matA, matB):
     if primernost_matrik(matA, matB):
@@ -73,4 +76,7 @@ def odštevalec_matrik(matA, matB):
         izpis_rezultata(C)
 
     else:
-        print('matriki nista primerni za odštevanje')
+        okno = tk.Tk()
+        pozor = tk.Label(okno, text='Matriki nista primerni za odštevanje', font=('Arial', 20))
+        pozor.grid()
+        okno.mainloop()

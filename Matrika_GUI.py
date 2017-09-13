@@ -50,7 +50,10 @@ def matrika():
                     vrstica = []
                     for stolpec in range(a2):
                         indeks = (vrsta, stolpec)
-                        vrstica.append(int(vrednost[indeks].get()))
+                        if je_stevilo(vrednost[indeks].get()):
+                            vrstica.append(int(vrednost[indeks].get()))
+                        else:
+                            error_okno()
                     matrikaA.append(vrstica)
                 with open(ime + '.txt', 'w') as f:
                     f.write(str(matrikaA))

@@ -3,6 +3,7 @@ from program_vezni import *
 from Orodje import *
 import tkinter as tk
 import ast
+import os.path
 
 def operacija():
     okno4 = tk.Tk()
@@ -20,9 +21,15 @@ def operacija():
         global mat2
         prva = matrika1.get()
         druga = matrika2.get()
-        mat1 = ast.literal_eval(open(str(prva)+'.txt', 'r').read())
-        mat2 = ast.literal_eval(open(str(druga)+'.txt', 'r').read())
-        print(mat1, mat2)
+        if os.path.isfile(str(prva)+'.txt'):
+            if os.path.isfile(str(druga)+'.txt'):
+                mat1 = ast.literal_eval(open(str(prva)+'.txt', 'r').read())
+                mat2 = ast.literal_eval(open(str(druga)+'.txt', 'r').read())
+                print(mat1, mat2)
+            else:
+                ne_obstoj_datoteke()
+        else:
+            ne_obstoj_datoteke()
 
     gumb_beri = tk.Button(okno4, text='Preberi matriki', command=preberi)
     gumb_beri.grid(row=2, column=0)
